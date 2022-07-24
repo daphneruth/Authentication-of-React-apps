@@ -6,6 +6,7 @@ import classes from './ProfileForm.module.css';
 
 const ProfileForm = () => {
   const history = useHistory();
+
   const newPasswordInputRef = useRef();
   const authCtx = useContext(AuthContext);
 
@@ -14,9 +15,9 @@ const ProfileForm = () => {
 
     const enteredNewPassword = newPasswordInputRef.current.value;
 
-    
+    // add validation
 
-    fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key= AIzaSyB9OabwFSjQTDd5XD3RjfxNgrSnfqPH8hQ', {
+    fetch ('https://identitytoolkit.googleapis.com/v1/accounts:update?key= AIzaSyB9OabwFSjQTDd5XD3RjfxNgrSnfqPH8hQ', {
       method: 'POST',
       body: JSON.stringify({
         idToken: authCtx.token,
@@ -27,9 +28,9 @@ const ProfileForm = () => {
         'Content-Type': 'application/json'
       }
     }).then(res => {
-    
-  history.replace('/');
+      // assumption: Always succeeds!
 
+      history.replace('/');
     });
   };
 
@@ -47,3 +48,5 @@ const ProfileForm = () => {
 };
 
 export default ProfileForm;
+
+
