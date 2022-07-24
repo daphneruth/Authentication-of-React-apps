@@ -23,8 +23,14 @@ const AuthForm = () => {
 
     setIsLoading(true);  
 
+    let url;
     if (isLogin) {
+      url =
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBZhsabDexE9BhcJbGxnZ4DiRlrCN9xe24';
     } else {
+      url =
+        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBZhsabDexE9BhcJbGxnZ4DiRlrCN9xe24';
+    }
       fetch(
        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB9OabwFSjQTDd5XD3RjfxNgrSnfqPH8hQ ',
         {
