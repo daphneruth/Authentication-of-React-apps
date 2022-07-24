@@ -57,8 +57,10 @@ const AuthForm = () => {
             throw new Error (errorMessage);
           });
         }
+      }).then(data => {}).catch(err =>{
+
       });
-    }
+    
   };
 
   return (
@@ -92,6 +94,6 @@ const AuthForm = () => {
       </form>
     </section>
   );
-};
+  }
 
 export default AuthForm;
