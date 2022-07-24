@@ -34,7 +34,7 @@ const AuthForm = () => {
         "Content-Type":'application/json'
       }
 
-    }),then(res =>{
+    }).then(res =>{
 
       if(res.ok){
 
