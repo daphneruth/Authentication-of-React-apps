@@ -7,6 +7,10 @@ import AuthContext from '../../store/AuthContext';
 const MainNavigation = () => {
  const authCxt=useContext(AuthContext)
 
+ const logoutHandler =()=> {
+  authCxt.logout();
+ }
+
  const isLoggedIn = authCxt.isLoggedIn;
   return (
     <header className={classes.header}>
