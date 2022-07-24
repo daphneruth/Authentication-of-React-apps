@@ -1,4 +1,5 @@
 import { useState, useRef ,useContext} from 'react';
+import AuthContext from '../../store/AuthContext';
 
 
 import classes from './AuthForm.module.css';
