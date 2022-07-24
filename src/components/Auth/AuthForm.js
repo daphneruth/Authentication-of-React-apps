@@ -31,8 +31,7 @@ const AuthForm = () => {
       url =
         'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBZhsabDexE9BhcJbGxnZ4DiRlrCN9xe24';
     }
-      fetch(
-       'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB9OabwFSjQTDd5XD3RjfxNgrSnfqPH8hQ ',
+      fetch (url,
         {
           method: 'POST',
           body: JSON.stringify({
@@ -47,7 +46,8 @@ const AuthForm = () => {
       ).then((res) => {
         setIsLoading(false);  
         if (res.ok) {
-          // ...
+          return res.json();
+          
         } else {
           return res.json().then((data) => {
             let errorMessage = 'Authentication failed!';
