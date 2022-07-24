@@ -1,4 +1,4 @@
-import React,{useState, useContext} from 'react';
+import React,{useState} from 'react';
 import AuthContext from '../../store/AuthContext';
 
 const AuthContext = React.createContext({
@@ -7,7 +7,7 @@ const AuthContext = React.createContext({
   login: (token) => {},
   logout: () => {},
 });
-
+ 
   export const AuthContextProvider = (props) =>{
 
     const [token, setToken] = useState(null);
