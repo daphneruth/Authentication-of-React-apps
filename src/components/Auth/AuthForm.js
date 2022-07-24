@@ -17,6 +17,15 @@ const AuthForm = () => {
     event.preventDefault();
   }
 
+  const enteredEmail = emailInputRef.current.value;
+  const enteredPassword = passwordInputRef.current.value;
+
+  if (isLogin){
+
+  }else {
+    
+  }
+
   return (
     <section className={classes.auth}>
       <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
