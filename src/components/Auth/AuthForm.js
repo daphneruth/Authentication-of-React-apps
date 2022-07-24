@@ -23,6 +23,7 @@ const AuthForm = () => {
   if (isLogin){
 
   }else {
+    fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB9OabwFSjQTDd5XD3RjfxNgrSnfqPH8hQ')
     
   }
 
