@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import React,{useState, useContext} from 'react';
+import AuthContext from '../../store/AuthContext';
 
 const AuthContext = React.createContext({
   token: '',
