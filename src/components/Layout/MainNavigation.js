@@ -1,17 +1,19 @@
-import { Link } from 'react-router-dom';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
-import classes from './MainNavigation.module.css';
 import AuthContext from '../../store/AuthContext';
+import classes from './MainNavigation.module.css';
 
 const MainNavigation = () => {
- const authCxt=useContext(AuthContext)
+  const authCtx = useContext(AuthContext);
 
- const logoutHandler =()=> {
-  authCxt.logout();
- }
+  const isLoggedIn = authCtx.isLoggedIn;
 
- const isLoggedIn = authCxt.isLoggedIn;
+  const logoutHandler = () => {
+    authCtx.logout();
+    // optional: redirect the user
+  };
+
   return (
     <header className={classes.header}>
       <Link to='/'>
@@ -20,19 +22,20 @@ const MainNavigation = () => {
       <nav>
         <ul>
           {!isLoggedIn && (
-                      <li>
-                      <Link to='/auth'>Login</Link>
-                    </li>
+            <li>
+              <Link to='/auth'>Login</Link>
+            </li>
           )}
-      {isLoggedIn && (
-         <li>
-         <Link to='/profile'>Profile</Link>
-       </li>
-      )}
-        {isLoggedIn && ( <li>
-            <button onClick={logoutHandler}>Logout</button>
-          </li>)} 
-         
+          {isLoggedIn && (
+            <li>
+              <Link to='/profile'>Profile</Link>
+            </li>
+          )}
+          {isLoggedIn && (
+            <li>
+              <button onClick={logoutHandler}>Logout</button>
+            </li>
+          )}
         </ul>
       </nav>
     </header>
